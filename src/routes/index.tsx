@@ -53,18 +53,18 @@ function BakeryHome() {
       </header>
 
       <section id="inicio" className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-7 px-4 py-10 sm:px-5 sm:py-14 md:grid-cols-2 md:gap-12 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-5 px-4 py-8 sm:px-5 sm:py-10 md:grid-cols-2 md:gap-8 md:py-14">
           <div>
             <span className="inline-flex rounded-full bg-[#fde3ef] px-3 py-1.5 text-xs font-bold text-[#c43f78] sm:px-4 sm:py-2 sm:text-sm">
               Padaria & Confeitaria
             </span>
-            <h1 className="mt-4 text-4xl font-black leading-[1.08] sm:text-5xl md:mt-6 md:text-7xl">
+            <h1 className="mt-4 text-3xl font-black leading-[1.1] sm:text-4xl md:mt-4 md:text-5xl">
               Sabores feitos para <span className="text-[#d94f8a]">momentos especiais.</span>
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-7 text-[#9b5b78] sm:text-lg sm:leading-8 md:mt-6">
+            <p className="mt-3 max-w-xl text-xs leading-5 text-[#9b5b78] sm:text-base sm:leading-7 md:mt-4">
               Bolos, doces e outras especialidades preparados com carinho para tornar cada momento ainda mais especial. Faça a sua encomenda de forma simples e fale connosco pelo WhatsApp.
             </p>
-            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-8">
+            <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-5">
               <a href="#encomenda" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d94f8a] px-5 py-3 font-bold text-white sm:px-6 sm:py-3.5">
                 <ShoppingBag size={18}/> Fazer encomenda
               </a>
@@ -74,18 +74,18 @@ function BakeryHome() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-[#d94f8a] p-6 text-white shadow-xl sm:p-8 md:rounded-[2.5rem] md:p-10">
+          <div className="rounded-2xl bg-[#d94f8a] p-5 text-white shadow-xl sm:p-6 md:rounded-3xl md:p-7">
             <MessageCircle size={34} className="text-white"/>
-            <h2 className="mt-4 text-2xl font-black sm:text-3xl">Encomende com facilidade</h2>
-            <div className="mt-5 space-y-4 sm:mt-7 sm:space-y-5">
+            <h2 className="mt-3 text-xl font-black sm:text-2xl">Encomende com facilidade</h2>
+            <div className="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
               {[
                 ["01", "Escolha o seu produto", "Conte-nos o que deseja: bolo, doce, sobremesa ou outra especialidade."],
                 ["02", "Faça o seu pedido", "Informe a quantidade, a data e os detalhes da sua encomenda."],
                 ["03", "Confirme a encomenda", "Falamos consigo pelo WhatsApp para confirmar os detalhes, disponibilidade e preço."],
               ].map(([number, title, text]) => (
-                <div key={number} className="flex gap-4">
+                <div key={number} className="flex gap-3">
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#d94f8a] text-sm font-black sm:h-10 sm:w-10">{number}</span>
-                  <div><p className="font-extrabold">{title}</p><p className="mt-1 text-sm leading-6 text-white/70">{text}</p></div>
+                  <div><p className="font-extrabold">{title}</p><p className="mt-1 text-xs leading-5 text-white/70">{text}</p></div>
                 </div>
               ))}
             </div>
@@ -93,18 +93,18 @@ function BakeryHome() {
         </div>
       </section>
 
-      <section id="encomenda" className="bg-white py-12 sm:py-16">
-        <div className="mx-auto max-w-5xl px-4 sm:px-5">
-          <div className="mb-7 text-center sm:mb-10">
+      <section id="encomenda" className="bg-white py-8 sm:py-10">
+        <div className="mx-auto max-w-4xl px-4 sm:px-5">
+          <div className="mb-5 text-center sm:mb-7">
             <p className="font-bold uppercase tracking-[0.18em] text-[#d94f8a]">Encomendas</p>
-            <h2 className="mt-2 text-4xl font-black md:text-5xl">Faça a sua encomenda</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[#8f5872]">
+            <h2 className="mt-2 text-3xl font-black md:text-4xl">Faça a sua encomenda</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-[#8f5872]">
               Diga-nos o que pretende encomendar e a data em que precisa. A nossa equipa entrará em contacto para confirmar todos os detalhes.
             </p>
           </div>
 
-          <form onSubmit={submitOrder} className="rounded-3xl border border-[#f3b6d2] bg-[#ffffff] p-4 shadow-lg sm:p-6 md:rounded-[2rem] md:p-10">
-            <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
+          <form onSubmit={submitOrder} className="rounded-2xl border border-[#f3b6d2] bg-[#ffffff] p-4 shadow-md sm:p-5 md:rounded-3xl md:p-7">
+            <div className="grid gap-3 sm:gap-6 md:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block font-bold">Nome completo *</span>
                 <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite o seu nome" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
@@ -120,7 +120,7 @@ function BakeryHome() {
               <textarea required value={order} onChange={(e) => setOrder(e.target.value)} rows={4} placeholder="Ex.: Bolo de aniversário para 10 pessoas, com decoração de chocolate." className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
             </label>
 
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block font-bold">Data da encomenda *</span>
                 <input required type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
@@ -152,23 +152,23 @@ function BakeryHome() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-6xl px-5">
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl bg-[#d94f8a] p-5 text-white sm:rounded-3xl sm:p-7">
+          <div className="grid gap-3 md:grid-cols-3">
+            <div className="rounded-2xl bg-[#d94f8a] p-4 text-white sm:rounded-2xl sm:p-5">
               <Clock3 className="text-[#f5c1db]" size={32}/>
-              <h3 className="mt-5 text-xl font-black">Horário de funcionamento</h3>
+              <h3 className="mt-3 text-lg font-black">Horário de funcionamento</h3>
               <p className="mt-2 text-white/70">Todos os dias<br/>08:00–20:00</p>
             </div>
-            <div className="rounded-2xl bg-[#fde3ef] p-5 sm:rounded-3xl sm:p-7">
+            <div className="rounded-2xl bg-[#fde3ef] p-4 sm:rounded-2xl sm:p-5">
               <MapPin className="text-[#d94f8a]" size={32}/>
-              <h3 className="mt-5 text-xl font-black">Onde estamos</h3>
+              <h3 className="mt-3 text-lg font-black">Onde estamos</h3>
               <p className="mt-2 text-[#8f5872]">N1, Maputo, Moçambique</p>
               <a href={mapUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block font-black text-[#d94f8a]">Ver localização →</a>
             </div>
-            <div className="rounded-2xl bg-[#d94f8a] p-5 text-white sm:rounded-3xl sm:p-7">
+            <div className="rounded-2xl bg-[#d94f8a] p-4 text-white sm:rounded-2xl sm:p-5">
               <MessageCircle size={32}/>
-              <h3 className="mt-5 text-xl font-black">WhatsApp</h3>
+              <h3 className="mt-3 text-lg font-black">WhatsApp</h3>
               <p className="mt-2 text-white/80">Fale connosco para confirmar disponibilidade, preços e detalhes da sua encomenda.</p>
               <a href={"https://wa.me/258861493492"} target="_blank" rel="noreferrer" className="mt-4 inline-block font-black">Falar no WhatsApp →</a>
             </div>
@@ -176,13 +176,13 @@ function BakeryHome() {
         </div>
       </section>
 
-      <section className="border-t border-[#f3b6d2] bg-white py-10 sm:py-14">
+      <section className="border-t border-[#f3b6d2] bg-white py-8 sm:py-10">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-5">
           <h2 className="text-2xl font-black sm:text-3xl">Siga o Império do Sabor</h2>
           <p className="mt-3 text-[#8f5872]">
             Veja os nossos bolos, doces e novidades no Instagram e faça a sua encomenda directamente connosco.
           </p>
-          <div className="mt-7 flex justify-center gap-3">
+          <div className="mt-5 flex justify-center gap-3">
             <a href="https://www.instagram.com/imperiodesabor/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#f3b6d2] px-5 py-3 font-bold text-[#8f5872] transition hover:border-[#d94f8a] hover:text-[#d94f8a]"><Instagram size={18}/> Instagram</a>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#f3b6d2] px-5 py-3 font-bold text-[#8f5872]"><Facebook size={18}/> Facebook</div>
           </div>
