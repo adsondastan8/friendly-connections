@@ -123,7 +123,7 @@ function BakeryHome() {
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block font-bold">Data da encomenda *</span>
-                <input required type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]""/>
+                <input required type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
               </label>
               <label className="block">
                 <span className="mb-2 block font-bold">Forma de entrega</span>
@@ -136,7 +136,7 @@ function BakeryHome() {
 
             <label className="mt-4 block sm:mt-6">
               <span className="mb-2 block font-bold">Observações</span>
-              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} placeholder="Quantidade, sabor, tamanho, decoração ou outro detalhe importante..." className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]""/>
+              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} placeholder="Quantidade, sabor, tamanho, decoração ou outro detalhe importante..." className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
             </label>
 
             <button type="submit" className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#d94f8a] px-5 py-3.5 text-base font-bold text-white shadow-md transition hover:scale-[1.01] sm:text-lg">
