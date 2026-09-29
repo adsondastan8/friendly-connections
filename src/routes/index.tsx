@@ -193,7 +193,7 @@ function BakeryHome() {
       </section>
 
       <footer className="bg-[#d94f8a] py-8 text-center text-sm text-white/65">
-        © {new Date().getFullYear()} Império do Sabor • Padaria & Confeitaria • Encomendas via WhatsApp
+        © {new Date().getFullYear()} Império do Sabor • Padaria & Confeitaria
       </footer>
     </main>
   );
