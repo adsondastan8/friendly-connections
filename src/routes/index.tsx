@@ -183,10 +183,10 @@ function BakeryHome() {
             A ideia deste site é não ficar com produtos antigos. As publicações das redes sociais continuam sendo a vitrine da padaria.
           </p>
           <div className="mt-7 flex justify-center gap-3">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#ead9c5] px-5 py-3 font-bold text-[#765e4b]"><Instagram size={18}/> Instagram</div>
+            <a href="https://www.instagram.com/imperiodesabor/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#ead9c5] px-5 py-3 font-bold text-[#765e4b] transition hover:border-[#b85c2b] hover:text-[#b85c2b]"><Instagram size={18}/> Instagram</a>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#ead9c5] px-5 py-3 font-bold text-[#765e4b]"><Facebook size={18}/> Facebook</div>
           </div>
-          <p className="mt-4 text-xs text-[#9a806c]">Os links oficiais das redes serão adicionados quando forem confirmados.</p>
+          <p className="mt-4 text-xs text-[#9a806c]">Instagram oficial: @imperiodesabor</p>
         </div>
       </section>
 
