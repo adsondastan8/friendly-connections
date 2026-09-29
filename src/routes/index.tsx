@@ -1,123 +1,198 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Clock3, MessageCircle, Phone, ChevronRight, Star, CreditCard, ShoppingBag } from "lucide-react";
+import { useState } from "react";
+import { Clock3, MapPin, MessageCircle, Phone, ShoppingBag, Instagram, Facebook, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/")({ component: BakeryHome });
 
 const mapUrl = "https://maps.app.goo.gl/McAz5R3CBrsGpgd97";
 const phone = "+258861493492";
-const whatsappUrl = "https://wa.me/258861493492?text=" + encodeURIComponent("Olá! Gostaria de fazer uma encomenda no Império do Sabor.");
-const photos = [
-  "https://img4.restaurantguru.ru/w166/rd15-Imperio-do-Sabor-meals-2026-04-3.jpg",
-  "https://img4.restaurantguru.ru/w166/r369-Imperio-do-Sabor-beverage-2026-04.jpg",
-  "https://img4.restaurantguru.ru/w166/rbf7-beverage-Imperio-do-Sabor-2026-04.jpg",
-];
-
-const menuItems = [
-  ["🥪", "Sanduíche", "Opção mencionada nas avaliações públicas."],
-  ["🥩", "Carne de vaca", "Opção destacada na ficha pública."],
-  ["🥔", "Carne com molho de natas e batatas", "Prato citado numa avaliação pública."],
-  ["🍰", "Bolos", "Produto identificado na ficha pública."],
-];
 
 function BakeryHome() {
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [order, setOrder] = useState("");
+  const [date, setDate] = useState("");
+  const [type, setType] = useState("Levantamento na padaria");
+  const [notes, setNotes] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const submitOrder = (event: React.FormEvent) => {
+    event.preventDefault();
+    const message = [
+      "Olá! Quero fazer uma encomenda no Império do Sabor.",
+      "",
+      "Nome: " + name,
+      "Contacto: " + contact,
+      "O que quero encomendar: " + order,
+      "Data pretendida: " + date,
+      "Entrega/levantamento: " + type,
+      notes ? "Observações: " + notes : "",
+      "",
+      "Vi este produto nas redes sociais e quero confirmar a disponibilidade e o preço."
+    ].filter(Boolean).join("\n");
+
+    window.open("https://wa.me/258861493492?text=" + encodeURIComponent(message), "_blank");
+    setSent(true);
+  };
+
   return (
-    <main className="min-h-screen bg-[#fffaf3] text-[#3b2416] selection:bg-[#f3dfc7]">
+    <main className="min-h-screen bg-[#fffaf3] text-[#3b2416]">
       <header className="sticky top-0 z-50 border-b border-[#ead9c5] bg-[#fffaf3]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
           <a href="#inicio" className="flex items-center gap-3">
             <span className="grid h-11 w-11 place-items-center rounded-full bg-[#b85c2b] text-2xl">🥖</span>
-            <div><p className="text-lg font-black">Império do Sabor</p><p className="text-xs text-[#8b6b55]">Padaria • N1 • Maputo</p></div>
+            <div>
+              <p className="text-lg font-black">Império do Sabor</p>
+              <p className="text-xs text-[#8b6b55]">Encomendas • Maputo</p>
+            </div>
           </a>
-          <nav className="hidden gap-6 text-sm font-bold md:flex">
-            <a href="#produtos">Produtos</a><a href="#fotos">Fotos</a><a href="#informacoes">Informações</a><a href="#contactos">Contacto</a>
-          </nav>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white"><MessageCircle size={18}/> WhatsApp</a>
+          <a href="#encomenda" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-black text-white">
+            <MessageCircle size={18}/> Fazer encomenda
+          </a>
         </div>
       </header>
 
-      <section id="inicio">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-28">
+      <section id="inicio" className="relative overflow-hidden">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-28">
           <div>
-            <span className="inline-flex rounded-full bg-[#f3dfc7] px-4 py-2 text-sm font-bold text-[#8d4b25]">⭐ 4,4/5 no Google • 5 avaliações</span>
-            <h1 className="mt-5 text-5xl font-black leading-tight md:text-7xl">Império do <span className="text-[#b85c2b]">Sabor.</span></h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[#6f5543]">Padaria e restaurante na N1, em Maputo, com atendimento das 08:00 às 20:00 todos os dias.</p>
+            <span className="inline-flex rounded-full bg-[#f3dfc7] px-4 py-2 text-sm font-bold text-[#8d4b25]">
+              📲 Site oficial de encomendas
+            </span>
+            <h1 className="mt-6 text-5xl font-black leading-[1.02] md:text-7xl">
+              Viu algo nas redes? <span className="text-[#b85c2b]">Encomende aqui.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-[#6f5543]">
+              O Instagram e o Facebook mostram as novidades. Aqui você só precisa dizer o que gostou e enviar o pedido pelo WhatsApp.
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 font-bold text-white"><MessageCircle size={18}/> Encomendar</a>
-              <a href={mapUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#d9c3aa] bg-white px-6 py-3.5 font-bold"><MapPin size={18}/> Como chegar</a>
+              <a href="#encomenda" className="inline-flex items-center gap-2 rounded-full bg-[#b85c2b] px-6 py-3.5 font-bold text-white">
+                <ShoppingBag size={18}/> Começar encomenda
+              </a>
+              <a href={"tel:" + phone} className="inline-flex items-center gap-2 rounded-full border border-[#d9c3aa] bg-white px-6 py-3.5 font-bold">
+                <Phone size={18}/> Ligar
+              </a>
             </div>
           </div>
-          <div className="overflow-hidden rounded-[2.5rem] bg-[#3b2416] p-3 shadow-2xl">
-            <img src={photos[0]} alt="Menu do Império do Sabor" className="h-[380px] w-full rounded-[2rem] object-cover transition duration-700 hover:scale-105"/>
-          </div>
-        </div>
-      </section>
 
-      <section id="produtos" className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <p className="font-bold uppercase tracking-[0.18em] text-[#b85c2b]">Menu público</p>
-          <h2 className="mt-2 text-4xl font-black md:text-5xl">Sabores do Império</h2>
-          <p className="mt-4 max-w-2xl text-[#765e4b]">Itens confirmados nas informações públicas consultadas. Não colocamos preços que não estejam publicados de forma verificável.</p>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {menuItems.map(([icon,name,description]) => (
-              <article key={name} className="group rounded-3xl border border-[#ead9c5] bg-[#fffaf3] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="grid h-16 w-16 place-items-center rounded-2xl bg-[#f3dfc7] text-3xl transition group-hover:scale-110">{icon}</div>
-                <h3 className="mt-5 text-xl font-extrabold">{name}</h3><p className="mt-2 text-sm leading-6 text-[#765e4b]">{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="fotos" className="py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <p className="font-bold uppercase tracking-[0.18em] text-[#b85c2b]">Galeria</p>
-          <h2 className="mt-2 text-4xl font-black">Fotos da ficha pública</h2>
-          <p className="mt-3 text-sm text-[#765e4b]">Fotos públicas associadas ao estabelecimento e identificadas como fotos do Google na ficha consultada. Para ver a galeria completa, abra o Google Maps.</p>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {photos.map((photo,index) => <img key={photo} src={photo} alt={index === 0 ? "Menu do Império do Sabor" : "Foto do Império do Sabor"} className="h-80 w-full rounded-3xl border border-[#ead9c5] bg-white object-cover shadow-sm transition duration-500 hover:scale-[1.02]"/>)}
-          </div>
-        </div>
-      </section>
-
-      <section id="informacoes" className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-[2rem] bg-[#3b2416] p-8 text-white md:p-10">
-              <ShoppingBag className="text-[#f3b878]" size={38}/>
-              <h2 className="mt-5 text-4xl font-black">Informações reais do estabelecimento</h2>
-              <div className="mt-6 space-y-4 text-white/85">
-                <p className="flex gap-3"><MapPin className="shrink-0" size={20}/> N1, Maputo, Moçambique</p>
-                <p className="flex gap-3"><Phone className="shrink-0" size={20}/> {phone}</p>
-                <p className="flex gap-3"><Clock3 className="shrink-0" size={20}/> Segunda a domingo: 08:00–20:00</p>
-                <p className="flex gap-3"><CreditCard className="shrink-0" size={20}/> Pagamento com cartão indicado na ficha pública</p>
-              </div>
-            </div>
-            <div className="rounded-[2rem] border border-[#ead9c5] bg-[#fffaf3] p-8 md:p-10">
-              <div className="flex items-center gap-2 text-[#b85c2b]"><Star fill="currentColor" size={22}/><span className="font-black text-2xl">4,4/5</span></div>
-              <p className="mt-2 text-sm text-[#765e4b]">Classificação apresentada atualmente no Google, com 5 avaliações.</p>
-              <div className="mt-8 space-y-3">
-                <a href={mapUrl} target="_blank" rel="noreferrer" className="flex items-center justify-between rounded-2xl bg-white p-4 font-bold shadow-sm">Abrir Google Maps <ChevronRight size={18}/></a>
-                <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center justify-between rounded-2xl bg-[#25D366] p-4 font-bold text-white">Falar pelo WhatsApp <ChevronRight size={18}/></a>
-              </div>
+          <div className="rounded-[2.5rem] bg-[#3b2416] p-8 text-white shadow-2xl md:p-10">
+            <MessageCircle size={42} className="text-[#25D366]"/>
+            <h2 className="mt-6 text-3xl font-black">Como funciona?</h2>
+            <div className="mt-7 space-y-5">
+              {[
+                ["01", "Veja a novidade", "Encontre o bolo, doce ou outro produto nas redes sociais da padaria."],
+                ["02", "Preencha o pedido", "Diga exatamente o que viu, a quantidade e a data que pretende."],
+                ["03", "Confirme no WhatsApp", "O pedido abre no WhatsApp para a padaria confirmar disponibilidade e preço."],
+              ].map(([number, title, text]) => (
+                <div key={number} className="flex gap-4">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#b85c2b] font-black">{number}</span>
+                  <div><p className="font-extrabold">{title}</p><p className="mt-1 text-sm leading-6 text-white/70">{text}</p></div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contactos" className="bg-[#f3dfc7] py-16 text-center">
-        <div className="mx-auto max-w-4xl px-5">
-          <p className="font-bold uppercase tracking-[0.18em] text-[#8d4b25]">Império do Sabor</p>
-          <h2 className="mt-3 text-4xl font-black">Visite-nos na N1</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[#6f5543]">Aberto todos os dias das 08:00 às 20:00.</p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <a href={mapUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#3b2416] px-6 py-3.5 font-bold text-white"><MapPin size={18}/> Abrir localização</a>
-            <a href={"tel:" + phone} className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-bold"><Phone size={18}/> Ligar</a>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 font-bold text-white"><MessageCircle size={18}/> WhatsApp</a>
+      <section id="encomenda" className="bg-white py-16">
+        <div className="mx-auto max-w-5xl px-5">
+          <div className="mb-10 text-center">
+            <p className="font-bold uppercase tracking-[0.18em] text-[#b85c2b]">Pedido</p>
+            <h2 className="mt-2 text-4xl font-black md:text-5xl">Faça a sua encomenda</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-[#765e4b]">
+              Não existe um catálogo fixo aqui de propósito. As novidades podem mudar nas redes sociais.
+            </p>
+          </div>
+
+          <form onSubmit={submitOrder} className="rounded-[2rem] border border-[#ead9c5] bg-[#fffaf3] p-6 shadow-xl md:p-10">
+            <div className="grid gap-6 md:grid-cols-2">
+              <label className="block">
+                <span className="mb-2 block font-bold">Seu nome *</span>
+                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Ex.: Adson Dastan" className="w-full rounded-2xl border border-[#dcc8b3] bg-white px-4 py-3.5 outline-none focus:border-[#b85c2b]"/>
+              </label>
+              <label className="block">
+                <span className="mb-2 block font-bold">Seu contacto *</span>
+                <input required value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Seu número de telefone" className="w-full rounded-2xl border border-[#dcc8b3] bg-white px-4 py-3.5 outline-none focus:border-[#b85c2b]"/>
+              </label>
+            </div>
+
+            <label className="mt-6 block">
+              <span className="mb-2 block font-bold">O que você viu e quer encomendar? *</span>
+              <textarea required value={order} onChange={(e) => setOrder(e.target.value)} rows={4} placeholder="Ex.: Vi no Instagram o bolo da publicação de hoje, quero saber se ainda está disponível e encomendar 1." className="w-full rounded-2xl border border-[#dcc8b3] bg-white px-4 py-3.5 outline-none focus:border-[#b85c2b]"/>
+            </label>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <label className="block">
+                <span className="mb-2 block font-bold">Data pretendida *</span>
+                <input required type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded-2xl border border-[#dcc8b3] bg-white px-4 py-3.5 outline-none focus:border-[#b85c2b]"/>
+              </label>
+              <label className="block">
+                <span className="mb-2 block font-bold">Como vai receber?</span>
+                <select value={type} onChange={(e) => setType(e.target.value)} className="w-full rounded-2xl border border-[#dcc8b3] bg-white px-4 py-3.5 outline-none focus:border-[#b85c2b]">
+                  <option>Levantamento na padaria</option>
+                  <option>Entrega — combinar pelo WhatsApp</option>
+                </select>
+              </label>
+            </div>
+
+            <label className="mt-6 block">
+              <span className="mb-2 block font-bold">Observações</span>
+              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} placeholder="Quantidade, sabor, tamanho, decoração ou qualquer detalhe..." className="w-full rounded-2xl border border-[#dcc8b3] bg-white px-4 py-3.5 outline-none focus:border-[#b85c2b]"/>
+            </label>
+
+            <button type="submit" className="mt-7 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-6 py-4 text-lg font-black text-white shadow-lg transition hover:scale-[1.01]">
+              <MessageCircle size={22}/> Enviar encomenda pelo WhatsApp
+            </button>
+
+            {sent && (
+              <p className="mt-4 flex items-center justify-center gap-2 text-center font-bold text-[#2f7d4a]">
+                <CheckCircle2 size={18}/> O WhatsApp foi aberto para confirmar o seu pedido.
+              </p>
+            )}
+          </form>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="rounded-3xl bg-[#3b2416] p-7 text-white">
+              <Clock3 className="text-[#f3b878]" size={32}/>
+              <h3 className="mt-5 text-xl font-black">Horário</h3>
+              <p className="mt-2 text-white/70">Todos os dias<br/>08:00–20:00</p>
+            </div>
+            <div className="rounded-3xl bg-[#f3dfc7] p-7">
+              <MapPin className="text-[#b85c2b]" size={32}/>
+              <h3 className="mt-5 text-xl font-black">Localização</h3>
+              <p className="mt-2 text-[#765e4b]">N1, Maputo, Moçambique</p>
+              <a href={mapUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block font-black text-[#b85c2b]">Abrir no Google Maps →</a>
+            </div>
+            <div className="rounded-3xl bg-[#25D366] p-7 text-white">
+              <MessageCircle size={32}/>
+              <h3 className="mt-5 text-xl font-black">WhatsApp</h3>
+              <p className="mt-2 text-white/80">Fale diretamente com a padaria para confirmar disponibilidade, preço e detalhes.</p>
+              <a href={"https://wa.me/258861493492"} target="_blank" rel="noreferrer" className="mt-4 inline-block font-black">Abrir WhatsApp →</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-[#2a1a11] py-8 text-center text-sm text-white/65">© {new Date().getFullYear()} Império do Sabor • N1, Maputo</footer>
+      <section className="border-t border-[#ead9c5] bg-white py-14">
+        <div className="mx-auto max-w-4xl px-5 text-center">
+          <h2 className="text-3xl font-black">Acompanhe as novidades nas redes</h2>
+          <p className="mt-3 text-[#765e4b]">
+            A ideia deste site é não ficar com produtos antigos. As publicações das redes sociais continuam sendo a vitrine da padaria.
+          </p>
+          <div className="mt-7 flex justify-center gap-3">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#ead9c5] px-5 py-3 font-bold text-[#765e4b]"><Instagram size={18}/> Instagram</div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#ead9c5] px-5 py-3 font-bold text-[#765e4b]"><Facebook size={18}/> Facebook</div>
+          </div>
+          <p className="mt-4 text-xs text-[#9a806c]">Os links oficiais das redes serão adicionados quando forem confirmados.</p>
+        </div>
+      </section>
+
+      <footer className="bg-[#2a1a11] py-8 text-center text-sm text-white/65">
+        © {new Date().getFullYear()} Império do Sabor • Encomendas via WhatsApp
+      </footer>
     </main>
   );
 }
