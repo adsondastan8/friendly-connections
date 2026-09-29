@@ -42,7 +42,7 @@ function BakeryHome() {
           <a href="#inicio" className="flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-[#d94f8a] text-xl sm:h-11 sm:w-11 sm:text-2xl">🥖</span>
             <div>
-              <p className="text-base font-black sm:text-lg">Império do Sabor</p>
+              <p className="text-sm font-black sm:text-lg">Império do Sabor</p>
               <p className="text-xs text-[#c95b8e]">Padaria & Confeitaria • Maputo</p>
             </div>
           </a>
@@ -58,17 +58,17 @@ function BakeryHome() {
             <span className="inline-flex rounded-full bg-[#fde3ef] px-3 py-1.5 text-xs font-bold text-[#c43f78] sm:px-4 sm:py-2 sm:text-sm">
               Padaria & Confeitaria
             </span>
-            <h1 className="mt-4 text-3xl font-black leading-[1.1] sm:text-4xl md:mt-4 md:text-5xl">
+            <h1 className="mt-4 text-2xl font-black leading-[1.15] sm:text-4xl md:mt-4 md:text-5xl">
               Sabores feitos para <span className="text-[#d94f8a]">momentos especiais.</span>
             </h1>
-            <p className="mt-3 max-w-xl text-xs leading-5 text-[#9b5b78] sm:text-base sm:leading-7 md:mt-4">
+            <p className="mt-3 max-w-xl text-[11px] leading-5 text-[#9b5b78] sm:text-base sm:leading-7 md:mt-4">
               Bolos, doces e outras especialidades preparados com carinho para tornar cada momento ainda mais especial. Faça a sua encomenda de forma simples e fale connosco pelo WhatsApp.
             </p>
             <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-5">
-              <a href="#encomenda" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d94f8a] px-5 py-3 font-bold text-white sm:px-6 sm:py-3.5">
+              <a href="#encomenda" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d94f8a] px-4 py-2.5 text-sm font-bold text-white sm:px-6 sm:py-3.5">
                 <ShoppingBag size={18}/> Fazer encomenda
               </a>
-              <a href={"tel:" + phone} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#f0a8ca] bg-white px-5 py-3 font-bold sm:px-6 sm:py-3.5">
+              <a href={"tel:" + phone} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#f0a8ca] bg-white px-4 py-2.5 text-sm font-bold sm:px-6 sm:py-3.5">
                 <Phone size={18}/> Contactar
               </a>
             </div>
@@ -76,7 +76,7 @@ function BakeryHome() {
 
           <div className="rounded-2xl bg-[#d94f8a] p-5 text-white shadow-xl sm:p-6 md:rounded-3xl md:p-7">
             <MessageCircle size={34} className="text-white"/>
-            <h2 className="mt-3 text-xl font-black sm:text-2xl">Encomende com facilidade</h2>
+            <h2 className="mt-3 text-base font-black sm:text-2xl">Encomende com facilidade</h2>
             <div className="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
               {[
                 ["01", "Escolha o seu produto", "Conte-nos o que deseja: bolo, doce, sobremesa ou outra especialidade."],
@@ -85,7 +85,7 @@ function BakeryHome() {
               ].map(([number, title, text]) => (
                 <div key={number} className="flex gap-3">
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#d94f8a] text-sm font-black sm:h-10 sm:w-10">{number}</span>
-                  <div><p className="font-extrabold">{title}</p><p className="mt-1 text-xs leading-5 text-white/70">{text}</p></div>
+                  <div><p className="text-sm font-extrabold">{title}</p><p className="mt-1 text-xs leading-5 text-white/70">{text}</p></div>
                 </div>
               ))}
             </div>
@@ -97,8 +97,8 @@ function BakeryHome() {
         <div className="mx-auto max-w-4xl px-4 sm:px-5">
           <div className="mb-5 text-center sm:mb-7">
             <p className="font-bold uppercase tracking-[0.18em] text-[#d94f8a]">Encomendas</p>
-            <h2 className="mt-2 text-3xl font-black md:text-4xl">Faça a sua encomenda</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-[#8f5872]">
+            <h2 className="mt-2 text-2xl font-black md:text-4xl">Faça a sua encomenda</h2>
+            <p className="mx-auto mt-2 max-w-2xl text-sm text-[#8f5872] sm:text-base">
               Diga-nos o que pretende encomendar e a data em que precisa. A nossa equipa entrará em contacto para confirmar todos os detalhes.
             </p>
           </div>
@@ -106,28 +106,28 @@ function BakeryHome() {
           <form onSubmit={submitOrder} className="rounded-2xl border border-[#f3b6d2] bg-[#ffffff] p-4 shadow-md sm:p-5 md:rounded-3xl md:p-7">
             <div className="grid gap-3 sm:gap-6 md:grid-cols-2">
               <label className="block">
-                <span className="mb-2 block font-bold">Nome completo *</span>
-                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite o seu nome" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
+                <span className="mb-1.5 block text-sm font-bold">Nome completo *</span>
+                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite o seu nome" className="w-full rounded-xl border border-[#efb0cf] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#d94f8a]"/>
               </label>
               <label className="block">
-                <span className="mb-2 block font-bold">Número de telefone *</span>
-                <input required value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Seu número de telefone" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
+                <span className="mb-1.5 block text-sm font-bold">Número de telefone *</span>
+                <input required value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Seu número de telefone" className="w-full rounded-xl border border-[#efb0cf] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#d94f8a]"/>
               </label>
             </div>
 
             <label className="mt-4 block sm:mt-6">
-              <span className="mb-2 block font-bold">O que deseja encomendar? *</span>
-              <textarea required value={order} onChange={(e) => setOrder(e.target.value)} rows={4} placeholder="Ex.: Bolo de aniversário para 10 pessoas, com decoração de chocolate." className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
+              <span className="mb-1.5 block text-sm font-bold">O que deseja encomendar? *</span>
+              <textarea required value={order} onChange={(e) => setOrder(e.target.value)} rows={3} placeholder="Ex.: Bolo de aniversário para 10 pessoas, com decoração de chocolate." className="w-full rounded-xl border border-[#efb0cf] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#d94f8a]"/>
             </label>
 
             <div className="mt-5 grid gap-4 md:grid-cols-2">
               <label className="block">
-                <span className="mb-2 block font-bold">Data da encomenda *</span>
-                <input required type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
+                <span className="mb-1.5 block text-sm font-bold">Data da encomenda *</span>
+                <input required type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#d94f8a]"/>
               </label>
               <label className="block">
-                <span className="mb-2 block font-bold">Forma de entrega</span>
-                <select value={type} onChange={(e) => setType(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]">
+                <span className="mb-1.5 block text-sm font-bold">Forma de entrega</span>
+                <select value={type} onChange={(e) => setType(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#d94f8a]">
                   <option>Levantamento na padaria</option>
                   <option>Entrega — combinar pelo WhatsApp</option>
                 </select>
@@ -135,11 +135,11 @@ function BakeryHome() {
             </div>
 
             <label className="mt-4 block sm:mt-6">
-              <span className="mb-2 block font-bold">Observações</span>
-              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} placeholder="Quantidade, sabor, tamanho, decoração ou outro detalhe importante..." className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
+              <span className="mb-1.5 block text-sm font-bold">Observações</span>
+              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} placeholder="Quantidade, sabor, tamanho, decoração ou outro detalhe importante..." className="w-full rounded-xl border border-[#efb0cf] bg-white px-3 py-2.5 text-sm outline-none focus:border-[#d94f8a]"/>
             </label>
 
-            <button type="submit" className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#d94f8a] px-5 py-3.5 text-base font-bold text-white shadow-md transition hover:scale-[1.01] sm:text-lg">
+            <button type="submit" className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#d94f8a] px-5 py-3.5 text-sm font-bold text-white shadow-md transition hover:scale-[1.01] sm:text-lg">
               <MessageCircle size={22}/> Enviar pedido pelo WhatsApp
             </button>
 
@@ -157,18 +157,18 @@ function BakeryHome() {
           <div className="grid gap-3 md:grid-cols-3">
             <div className="rounded-2xl bg-[#d94f8a] p-4 text-white sm:rounded-2xl sm:p-5">
               <Clock3 className="text-[#f5c1db]" size={32}/>
-              <h3 className="mt-3 text-lg font-black">Horário de funcionamento</h3>
+              <h3 className="mt-3 text-base font-black">Horário de funcionamento</h3>
               <p className="mt-2 text-white/70">Todos os dias<br/>08:00–20:00</p>
             </div>
             <div className="rounded-2xl bg-[#fde3ef] p-4 sm:rounded-2xl sm:p-5">
               <MapPin className="text-[#d94f8a]" size={32}/>
-              <h3 className="mt-3 text-lg font-black">Onde estamos</h3>
+              <h3 className="mt-3 text-base font-black">Onde estamos</h3>
               <p className="mt-2 text-[#8f5872]">N1, Maputo, Moçambique</p>
               <a href={mapUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block font-black text-[#d94f8a]">Ver localização →</a>
             </div>
             <div className="rounded-2xl bg-[#d94f8a] p-4 text-white sm:rounded-2xl sm:p-5">
               <MessageCircle size={32}/>
-              <h3 className="mt-3 text-lg font-black">WhatsApp</h3>
+              <h3 className="mt-3 text-base font-black">WhatsApp</h3>
               <p className="mt-2 text-white/80">Fale connosco para confirmar disponibilidade, preços e detalhes da sua encomenda.</p>
               <a href={"https://wa.me/258861493492"} target="_blank" rel="noreferrer" className="mt-4 inline-block font-black">Falar no WhatsApp →</a>
             </div>
