@@ -46,8 +46,9 @@ function BakeryHome() {
               <p className="text-xs text-[#c95b8e]">Padaria & Confeitaria • Maputo</p>
             </div>
           </a>
-          <a href="#encomenda" className="inline-flex items-center gap-2 rounded-full bg-[#d94f8a] px-4 py-2.5 text-sm font-bold text-white sm:px-5 sm:py-3">
-            <MessageCircle size={18}/> Fazer encomenda
+          <a href="#encomenda" className="group inline-flex items-center gap-2 rounded-full bg-[#d94f8a] px-4 py-2 text-xs font-extrabold text-white shadow-[0_6px_18px_rgba(217,79,138,0.22)] ring-1 ring-[#d94f8a]/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#c9437e] hover:shadow-[0_9px_24px_rgba(217,79,138,0.28)] sm:px-4.5 sm:py-2.5 sm:text-sm">
+            <span className="grid h-6 w-6 place-items-center rounded-full bg-white/15 transition-transform duration-200 group-hover:scale-105"><ShoppingBag size={14}/></span>
+            Fazer encomenda
           </a>
         </div>
       </header>
@@ -65,8 +66,9 @@ function BakeryHome() {
               Bolos, doces e outras especialidades preparados com carinho para tornar cada momento ainda mais especial. Faça a sua encomenda de forma simples e fale connosco pelo WhatsApp.
             </p>
             <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-5">
-              <a href="#encomenda" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d94f8a] px-4 py-2.5 text-sm font-bold text-white sm:px-6 sm:py-3.5">
-                <ShoppingBag size={18}/> Fazer encomenda
+              <a href="#encomenda" className="group inline-flex w-fit items-center justify-center gap-2 rounded-full bg-[#d94f8a] px-5 py-3 text-sm font-extrabold text-white shadow-[0_10px_26px_rgba(217,79,138,0.24)] ring-1 ring-[#d94f8a]/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#c9437e] hover:shadow-[0_14px_30px_rgba(217,79,138,0.30)] active:translate-y-0 sm:px-5.5 sm:py-3">
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-white/15 transition-transform duration-200 group-hover:scale-105"><ShoppingBag size={15}/></span>
+                Fazer encomenda
               </a>
               <a href={"tel:" + phone} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#f0a8ca] bg-white px-4 py-2.5 text-sm font-bold sm:px-6 sm:py-3.5">
                 <Phone size={18}/> Contactar
