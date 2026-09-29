@@ -12,11 +12,11 @@ const photos = [
   "https://img4.restaurantguru.ru/w166/rbf7-beverage-Imperio-do-Sabor-2026-04.jpg",
 ];
 
-const products = [
-  ["🥖", "Padaria e confeitaria", "Pães, bolos e produtos de pastelaria."],
-  ["🥪", "Sanduíches", "Uma das opções mencionadas nas informações públicas da casa."],
-  ["🥩", "Pratos de carne", "A ficha pública menciona carne de vaca e acompanhamentos."],
-  ["🍰", "Bolos", "Bolos fazem parte da oferta identificada na ficha pública."],
+const menuItems = [
+  ["🥪", "Sanduíche", "Opção mencionada nas avaliações públicas."],
+  ["🥩", "Carne de vaca", "Opção destacada na ficha pública."],
+  ["🥔", "Carne com molho de natas e batatas", "Prato citado numa avaliação pública."],
+  ["🍰", "Bolos", "Produto identificado na ficha pública."],
 ];
 
 function BakeryHome() {
@@ -54,11 +54,11 @@ function BakeryHome() {
 
       <section id="produtos" className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-5">
-          <p className="font-bold uppercase tracking-[0.18em] text-[#b85c2b]">Oferta identificada</p>
+          <p className="font-bold uppercase tracking-[0.18em] text-[#b85c2b]">Menu público</p>
           <h2 className="mt-2 text-4xl font-black md:text-5xl">Sabores do Império</h2>
-          <p className="mt-4 max-w-2xl text-[#765e4b]">A informação pública disponível identifica a casa como padaria e também destaca comida, sanduíches, carne, bebidas e bolos.</p>
+          <p className="mt-4 max-w-2xl text-[#765e4b]">Itens confirmados nas informações públicas consultadas. Não colocamos preços que não estejam publicados de forma verificável.</p>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {products.map(([icon,name,description]) => (
+            {menuItems.map(([icon,name,description]) => (
               <article key={name} className="rounded-3xl border border-[#ead9c5] bg-[#fffaf3] p-6 hover:shadow-lg">
                 <div className="grid h-16 w-16 place-items-center rounded-2xl bg-[#f3dfc7] text-3xl">{icon}</div>
                 <h3 className="mt-5 text-xl font-extrabold">{name}</h3><p className="mt-2 text-sm leading-6 text-[#765e4b]">{description}</p>
@@ -72,7 +72,7 @@ function BakeryHome() {
         <div className="mx-auto max-w-6xl px-5">
           <p className="font-bold uppercase tracking-[0.18em] text-[#b85c2b]">Galeria</p>
           <h2 className="mt-2 text-4xl font-black">Fotos da ficha pública</h2>
-          <p className="mt-3 text-sm text-[#765e4b]">Fotos públicas associadas ao estabelecimento e identificadas como fotos do Google na ficha consultada.</p>
+          <p className="mt-3 text-sm text-[#765e4b]">Fotos públicas associadas ao estabelecimento e identificadas como fotos do Google na ficha consultada. Para ver a galeria completa, abra o Google Maps.</p>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {photos.map((photo,index) => <img key={photo} src={photo} alt={index === 0 ? "Menu do Império do Sabor" : "Foto do Império do Sabor"} className="h-80 w-full rounded-3xl border border-[#ead9c5] bg-white object-cover shadow-sm"/>)}
           </div>
