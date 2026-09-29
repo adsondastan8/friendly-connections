@@ -107,7 +107,7 @@ function BakeryHome() {
             <div className="grid gap-6 md:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block font-bold">Nome completo *</span>
-                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Ex.: Adson Dastan" className="w-full rounded-2xl border border-[#efb0cf] bg-white px-4 py-3.5 outline-none focus:border-[#d94f8a]"/>
+                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite o seu nome" className="w-full rounded-2xl border border-[#efb0cf] bg-white px-4 py-3.5 outline-none focus:border-[#d94f8a]"/>
               </label>
               <label className="block">
                 <span className="mb-2 block font-bold">Número de telefone *</span>
