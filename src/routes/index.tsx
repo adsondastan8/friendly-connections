@@ -46,10 +46,6 @@ function BakeryHome() {
               <p className="text-xs text-[#c95b8e]">Padaria & Confeitaria • Maputo</p>
             </div>
           </a>
-          <a href="#encomenda" className="group inline-flex items-center gap-2 rounded-full bg-[#d94f8a] px-4 py-2 text-xs font-extrabold text-white shadow-[0_6px_18px_rgba(217,79,138,0.22)] ring-1 ring-[#d94f8a]/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#c9437e] hover:shadow-[0_9px_24px_rgba(217,79,138,0.28)] sm:px-4.5 sm:py-2.5 sm:text-sm">
-            <span className="grid h-6 w-6 place-items-center rounded-full bg-white/15 transition-transform duration-200 group-hover:scale-105"><ShoppingBag size={14}/></span>
-            Fazer encomenda
-          </a>
         </div>
       </header>
 
