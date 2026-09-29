@@ -127,7 +127,7 @@ function BakeryHome() {
               </label>
               <label className="block">
                 <span className="mb-2 block font-bold">Forma de entrega</span>
-                <select value={type} onChange={(e) => setType(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"">
+                <select value={type} onChange={(e) => setType(e.target.value)} className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]">
                   <option>Levantamento na padaria</option>
                   <option>Entrega — combinar pelo WhatsApp</option>
                 </select>
