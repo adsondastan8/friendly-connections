@@ -21,7 +21,7 @@ const menuItems = [
 
 function BakeryHome() {
   return (
-    <main className="min-h-screen bg-[#fffaf3] text-[#3b2416]">
+    <main className="min-h-screen bg-[#fffaf3] text-[#3b2416] selection:bg-[#f3dfc7]">
       <header className="sticky top-0 z-50 border-b border-[#ead9c5] bg-[#fffaf3]/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <a href="#inicio" className="flex items-center gap-3">
@@ -36,7 +36,7 @@ function BakeryHome() {
       </header>
 
       <section id="inicio">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-28">
           <div>
             <span className="inline-flex rounded-full bg-[#f3dfc7] px-4 py-2 text-sm font-bold text-[#8d4b25]">⭐ 4,4/5 no Google • 5 avaliações</span>
             <h1 className="mt-5 text-5xl font-black leading-tight md:text-7xl">Império do <span className="text-[#b85c2b]">Sabor.</span></h1>
@@ -47,7 +47,7 @@ function BakeryHome() {
             </div>
           </div>
           <div className="overflow-hidden rounded-[2.5rem] bg-[#3b2416] p-3 shadow-2xl">
-            <img src={photos[0]} alt="Menu do Império do Sabor" className="h-[380px] w-full rounded-[2rem] object-cover"/>
+            <img src={photos[0]} alt="Menu do Império do Sabor" className="h-[380px] w-full rounded-[2rem] object-cover transition duration-700 hover:scale-105"/>
           </div>
         </div>
       </section>
@@ -59,8 +59,8 @@ function BakeryHome() {
           <p className="mt-4 max-w-2xl text-[#765e4b]">Itens confirmados nas informações públicas consultadas. Não colocamos preços que não estejam publicados de forma verificável.</p>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {menuItems.map(([icon,name,description]) => (
-              <article key={name} className="rounded-3xl border border-[#ead9c5] bg-[#fffaf3] p-6 hover:shadow-lg">
-                <div className="grid h-16 w-16 place-items-center rounded-2xl bg-[#f3dfc7] text-3xl">{icon}</div>
+              <article key={name} className="group rounded-3xl border border-[#ead9c5] bg-[#fffaf3] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="grid h-16 w-16 place-items-center rounded-2xl bg-[#f3dfc7] text-3xl transition group-hover:scale-110">{icon}</div>
                 <h3 className="mt-5 text-xl font-extrabold">{name}</h3><p className="mt-2 text-sm leading-6 text-[#765e4b]">{description}</p>
               </article>
             ))}
@@ -74,7 +74,7 @@ function BakeryHome() {
           <h2 className="mt-2 text-4xl font-black">Fotos da ficha pública</h2>
           <p className="mt-3 text-sm text-[#765e4b]">Fotos públicas associadas ao estabelecimento e identificadas como fotos do Google na ficha consultada. Para ver a galeria completa, abra o Google Maps.</p>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {photos.map((photo,index) => <img key={photo} src={photo} alt={index === 0 ? "Menu do Império do Sabor" : "Foto do Império do Sabor"} className="h-80 w-full rounded-3xl border border-[#ead9c5] bg-white object-cover shadow-sm"/>)}
+            {photos.map((photo,index) => <img key={photo} src={photo} alt={index === 0 ? "Menu do Império do Sabor" : "Foto do Império do Sabor"} className="h-80 w-full rounded-3xl border border-[#ead9c5] bg-white object-cover shadow-sm transition duration-500 hover:scale-[1.02]"/>)}
           </div>
         </div>
       </section>
