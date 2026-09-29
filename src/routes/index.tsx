@@ -107,7 +107,7 @@ function BakeryHome() {
             <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block font-bold">Nome completo *</span>
-                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite o seu nome" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]""/>
+                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite o seu nome" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]"/>
               </label>
               <label className="block">
                 <span className="mb-2 block font-bold">Número de telefone *</span>
@@ -117,7 +117,7 @@ function BakeryHome() {
 
             <label className="mt-4 block sm:mt-6">
               <span className="mb-2 block font-bold">O que deseja encomendar? *</span>
-              <textarea required value={order} onChange={(e) => setOrder(e.target.value)} rows={4} placeholder="Ex.: Bolo de aniversário para 10 pessoas, com decoração de chocolate." className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3" outline-none focus:border-[#d94f8a]"/>
+              <textarea required value={order} onChange={(e) => setOrder(e.target.value)} rows={4} placeholder="Ex.: Bolo de aniversário para 10 pessoas, com decoração de chocolate." className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]""/>
             </label>
 
             <div className="mt-6 grid gap-6 md:grid-cols-2">
