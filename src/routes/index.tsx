@@ -75,7 +75,7 @@ function BakeryHome() {
           </div>
 
           <div className="rounded-3xl bg-[#d94f8a] p-6 text-white shadow-xl sm:p-8 md:rounded-[2.5rem] md:p-10">
-            <MessageCircle size={34} className="text-[#d94f8a]"/>
+            <MessageCircle size={34} className="text-white"/>
             <h2 className="mt-4 text-2xl font-black sm:text-3xl">Encomende com facilidade</h2>
             <div className="mt-5 space-y-4 sm:mt-7 sm:space-y-5">
               {[
@@ -84,7 +84,7 @@ function BakeryHome() {
                 ["03", "Confirme a encomenda", "Falamos consigo pelo WhatsApp para confirmar os detalhes, disponibilidade e preço."],
               ].map(([number, title, text]) => (
                 <div key={number} className="flex gap-4">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#d94f8a] text-sm font-black sm:h-10 sm:w-10">{number}</span>
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#d94f8a] text-sm font-black sm:h-10 sm:w-10">{number}</span>
                   <div><p className="font-extrabold">{title}</p><p className="mt-1 text-sm leading-6 text-white/70">{text}</p></div>
                 </div>
               ))}
@@ -107,11 +107,11 @@ function BakeryHome() {
             <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block font-bold">Nome completo *</span>
-                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite o seu nome" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3" outline-none focus:border-[#d94f8a]"/>
+                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite o seu nome" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]""/>
               </label>
               <label className="block">
                 <span className="mb-2 block font-bold">Número de telefone *</span>
-                <input required value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Seu número de telefone" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3" outline-none focus:border-[#d94f8a]"/>
+                <input required value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Seu número de telefone" className="w-full rounded-xl border border-[#efb0cf] bg-white px-4 py-3 outline-none focus:border-[#d94f8a]""/>
               </label>
             </div>
 
